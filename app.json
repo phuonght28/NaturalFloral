@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "sdkVersion": "27.0.0",
+    "name": "Flora Natura",
+    "slug": "flora-natura"
+  },
+  "splash": {
+    "image": "./src/resources/images/logo.jpg",
+    "resizeMode": "contain",
+    "backgroundColor": "#4D4D4D"
+  }
+}

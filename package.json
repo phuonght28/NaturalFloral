@@ -1,0 +1,56 @@
+{
+  "name": "flora-natura-mobile",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jest": "^21.17.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-react": "^7.9.1",
+    "eslint-plugin-react-native": "^3.2.1",
+    "eslint-plugin-standard": "^3.1.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest-expo": "~27.0.0",
+    "prop-types": "^15.6.1",
+    "react-dom": "^16.4.0",
+    "react-native-scripts": "1.14.0",
+    "react-test-renderer": "16.3.1",
+    "xhr2": "^0.1.4"
+  },
+  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "scripts": {
+    "start": "react-native-scripts start",
+    "eject": "react-native-scripts eject",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-native|sentry-expo|expo|react-navigation|native-base-shoutem-theme|@shoutem/theme|@shoutem/animation|@shoutem/ui|tcomb-form-native)"
+    ]
+  },
+  "dependencies": {
+    "color": "^3.0.0",
+    "expo": "^27.0.1",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.2",
+    "native-base": "^2.4.5",
+    "react": "16.3.1",
+    "react-native": "~0.55.2",
+    "react-native-communications": "^2.2.1",
+    "react-native-slideshow": "^1.0.1",
+    "react-native-super-grid": "^2.3.2",
+    "react-native-swiper": "^1.5.13",
+    "react-native-vector-icons": "^4.6.0",
+    "react-navigation": "^2.2.0",
+    "sentry-expo": "^1.9.0"
+  }
+}
