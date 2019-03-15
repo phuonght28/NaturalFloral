@@ -1,149 +1,74 @@
 import EventEmitter from './event-emitter'
-import Navigator from './navigator'
-import cachedAPI from './cached-api'
-import Dota2Parser from './parsers/dota2'
-// import CSGOParser from './parsers/csgo'
-
-const PAGE_SIZE = 5
-const SERIES_GROUP = [
-  {
-    title: 'Upcoming', id: 'upcoming', dataKey: 'upcoming_series', cache: 1
-  },
-  {
-    title: 'Live Score', id: 'live', dataKey: 'live_series', cache: 1
-  },
-  {
-    title: 'Matches History', id: 'history', dataKey: 'ended_series', cache: 5
-  }
-]
-
-const HOST = 'https://esportsace.com'
+import { AsyncStorage } from 'react-native'
+import PRODUITS from './parsers/produits'
+import PLANTES from './parsers/plantes'
+import IMAGES from './images'
 
 class Store extends EventEmitter {
   constructor() {
     super()
-    this._games = [
-      {
-        name: 'Dota 2',
-        seriesTypes: SERIES_GROUP.map((group) => ({
-          ...group,
-          parser: Dota2Parser,
-          baseUrl: `${HOST}/api/v1/dota2/`
-        }))
-      },
-      {
-        name: 'CSGO',
-        seriesTypes: SERIES_GROUP.map((group) => ({
-          ...group,
-          parser: Dota2Parser, // TODO: API is not ready
-          baseUrl: `${HOST}/api/v1/dota2/` // TODO: API is not ready
-        }))
-      }
-    ]
   }
 
   async warmUp() {
-    await cachedAPI.init()
-    await this.getSeries({
-      ...SERIES_GROUP[0],
-      parser: Dota2Parser,
-      baseUrl: `${HOST}/api/v1/dota2/`
+    //await this._storeData('FAVORITE', JSON.stringify(['fdsf']))
+  }
+  _retrieveData = async (keyString) => {
+    try {
+      const value = await AsyncStorage.getItem(keyString)
+      if (value !== null) {
+        value = JSON.parse(value)
+        return value
+      }
+      else {
+        this._storeData(keyString, '')
+      }
+    } catch (error) {
+      // Error retrieving data
+    }
+  }
+  _storeData = async (keyString, valueString) => {
+    try {
+      valueString = JSON.stringify(valueString)
+      AsyncStorage.setItem(keyString, valueString)
+    } catch (error) {
+      // Error saving data
+    }
+  }
+  _clearData = async (key) => {
+    try {
+      AsyncStorage.removeItem(key, (err) => {
+        console.log('err:', err)
+      })
+    } catch (error) {
+      // Error saving data
+    }
+  }
+
+  async getPlantesList() {
+    const FAVORITE = await this._retrieveData('FAVORITE')
+    
+    const plantesList = []
+    PLANTES.map((plante) => {
+      let item = []
+      item.id = plante.id
+      item.nom = plante.nom
+      item.nom_common = plante.nom
+      item.nom_latin = plante.nom_latin
+      item.img = IMAGES.getPlantesImages(plante.id)
+      item.favori = false
+      //item.favori = FAVORITE.find((id) => plante.id === id) ? true : false
+      plantesList.push(item)
     })
-    await this.getSeries({
-      ...SERIES_GROUP[1],
-      parser: Dota2Parser,
-      baseUrl: `${HOST}/api/v1/dota2/`
-    })
-    await this.getSeries({
-      ...SERIES_GROUP[2],
-      parser: Dota2Parser,
-      baseUrl: `${HOST}/api/v1/dota2/`
-    })
+    return plantesList
   }
+  async getPlanteDetail(propsID) {
+    const FAVORITE = await this._retrieveData('FAVORITE')
 
-  async getSeries(meta, page = 1) {
-    try {
-      const {
-        baseUrl, id, dataKey, parser, cache
-      } = meta
-      const url = `${baseUrl}series/${id}?page=${page}&&size=${PAGE_SIZE}`
-      const data = await cachedAPI.retrieve(url, cache)
-      const seriesList = parser.parseSeriesList(data, dataKey, meta)
-
-      return { data: seriesList, lastItem: seriesList.length < PAGE_SIZE }
-    }
-    catch (err) {
-      if (err.message === 'Network request failed') {
-        Navigator.showNetworkError()
-      }
-      else {
-        console.log(err) // eslint-disable-line no-console
-      }
-      return { data: [] }
-    }
-  }
-
-  async getSeriesDetail({ meta, id }) {
-    console.log(`Series: ${id}`) // eslint-disable-line no-console
-    try {
-      const {
-        baseUrl, parser
-      } = meta
-      const url = `${baseUrl}series/${id}`
-      const data = await cachedAPI.retrieve(url, meta.id === 'history' ? 999999999999 : 0)
-
-      const parsedData = parser.parseSeries(data, meta)
-
-      return parsedData
-    }
-    catch (err) {
-      if (err.message === 'Network request failed') {
-        Navigator.showNetworkError()
-      }
-      else {
-        console.log(err) // eslint-disable-line no-console
-      }
-      return {}
-    }
-  }
-
-  async getMatch(matchId, cache = 0) {
-    console.log(`Match: ${matchId}`) // eslint-disable-line no-console
-    try {
-      const url = `https://esportsace.com/api/v1/dota2/match/${matchId}`
-      const data = await cachedAPI.retrieve(url, cache)
-      return data
-    }
-    catch (err) {
-      if (err.message === 'Network request failed') {
-        Navigator.showNetworkError()
-      }
-      else {
-        console.log(err) // eslint-disable-line no-console
-      }
-      return {}
-    }
-  }
-
-  async getTeamStat({ id }) {
-    try {
-      const url = `https://esportsace.com/api/v1/dota2/team/${id}/stat`
-      const data = await cachedAPI.retrieve(url)
-      return data
-    }
-    catch (err) {
-      if (err.message === 'Network request failed') {
-        Navigator.showNetworkError()
-      }
-      else {
-        console.log(err) // eslint-disable-line no-console
-      }
-      return {}
-    }
-  }
-
-  get games() {
-    return this._games
+    const plant = PLANTES.find((item) => item.id === propsID)
+    item.favori = false
+    // plant.favori = FAVORITE.find((id) => id === propsID) ? true : false
+    plant.img = IMAGES.getPlantesImages(propsID)
+    return plant
   }
 }
 
