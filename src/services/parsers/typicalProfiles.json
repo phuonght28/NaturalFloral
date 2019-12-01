@@ -1,0 +1,255 @@
+[
+    {
+        "object": "Personne âgée (sans ou avec peu de médication et sur avis médical)",
+        "associated": 
+        [
+            {
+                "plantes": "Ginkgo biloba, ail noir",
+                "descript": "Si problèmes de mémoire, aide système vasculaire cérébrale"
+            },
+            {
+                "plantes": "Echinacée, serpolet",
+                "descript": "renforcement du système immunitaire"
+            },
+            {
+                "plantes": "Eschscholtzia, mélisse",
+                "descript": "si petite dépression, insomnies..."
+            },
+            {
+                "plantes": "Ortie",
+                "descript": "reminéralisant"
+            },
+            {
+                "plantes": "Mauve, aloès sève",
+                "descript": "si problème de constipation (attention avec l’aloès sève)"
+            },
+            {
+                "plantes": "Argousier",
+                "descript": "si asthénie"
+            }
+        ]
+    },
+    {
+        "object": "Femme après accouchement (si il n'y a pas d’allaitement ou sur avis médical)",
+        "associated": [
+            {
+                "plantes": "Ortie",
+                "descript": "Si perte de cheveux, besoin de se reminéraliser"
+            },
+            {
+                "plantes": "Millepertuis, eschscholtzia",
+                "descript": "Si baby blues"
+            },
+            {
+                "plantes": "Valériane, mélisse, romarin",
+                "descript": "Si stress et difficultés pour dormir"
+            },
+            {
+                "plantes": "Argousier",
+                "descript": "Si asthénie"
+            }
+        ]
+    },
+    {
+        "object": "Personne souffrant de rhumatismes ou d'arthrose (sans ou avec peu de médication et sur avis médical)",
+        "associated": [
+            {
+                "plantes": "Cassis",
+                "descript": "Anti-inflammatoire, diurétique"
+            },
+            {
+                "plantes": "Argousier",
+                "descript": "Pour renforcer l’apport en vitamine C (surtout si prise d’anti-douleurs à base de salicylates (aspirine)"
+            },
+            {
+                "plantes": "Reine des prés",
+                "descript": "Anti-douleur, diurétique, peut être associée au cassis"
+            },
+            {
+                "plantes": "Harpagophytum + prêle",
+                "descript": "Sur les douleurs et l’inflammation"
+            },
+            {
+                "plantes": "Sève de bouleau, aubier de tilleul",
+                "descript": "Pour drainages ponctuels, à proposer avant tous traitements et en entretien"
+            }
+        ]
+    },
+    {
+        "object": "Personne qui commence un régime ou réadapter ses habitudes alimentaires",
+        "associated": [
+            {
+                "plantes": "Pissenlit, cassis, sève de bouleau",
+                "descript": "Drainage"
+            },
+            {
+                "plantes": "Reine des prés",
+                "descript": "Diurétique, action sur la cellulite, peut être associée à la bruyère ou au pissenlit"
+            },
+            {
+                "plantes": "Aloés vera gel",
+                "descript": "Drainage intestinal"
+            },
+            {
+                "plantes": "Argousier+ serpolet",
+                "descript": "Si fatigue"
+            },
+            {
+                "plantes": "Mélisse, lotier",
+                "descript": "Si stress"
+            }
+        ]
+    },
+    {
+        "object": "Sportif - Avant effort",
+        "associated": [
+            {
+                "plantes": "Argousier",
+                "descript": "Renforcer l’apport en vitamine C, anti asthénie"
+            },
+            {
+                "plantes": "Reine des prés",
+                "descript": "aide à lutter contre les douleurs, les contractures, fluidifie le sang"
+            },
+            {
+                "plantes": "Echinacée, serpolet",
+                "descript": "Renforcer les défenses immunitaires"
+            }
+        ]
+    },
+    {
+        "object": "Sportif - Après effort",
+        "associated": [
+            {
+                "plantes": "Reine des prés",
+                "descript": "Anti douleurs (agit comme l’aspirine), anti courbatures"
+            },
+            {
+                "plantes": "Sève de bouleau",
+                "descript": "Drainage élimine les toxines"
+            },
+            {
+                "plantes": "Ortie",
+                "descript": "Diurétique, reminéralise"
+            },
+            {
+                "plantes": "Echinacée, serpolet",
+                "descript": "Renforce les défenses immunitaires"
+            }
+        ]
+    },
+    {
+        "object": "Convalescence après une gastroentérite",
+        "associated": [
+            {
+                "plantes": "Echinacée + canneberge",
+                "descript": "Renforce la flore intestinale et les défenses immunitaires"
+            },
+            {
+                "plantes": "Serpolet, ail noir",
+                "descript": "Renforce les défenses immunitaires"
+            },
+            {
+                "plantes": "Ortie",
+                "descript": "Renforce les défenses immunitaires, reminéralise"
+            },
+            {
+                "plantes": "Argousier",
+                "descript": "Lutte contre l’asthénie"
+            },
+            {
+                "plantes": "Aloès vera gel",
+                "descript": "Renforce la paroi et la flore intestinale"
+            }
+        ]
+    },
+    {
+        "object": "Après une prise d’antibiotiques",
+        "associated": [
+            {
+                "plantes": "Aloés vera gel + échinacée",
+                "descript": "Renforcent la flore intestinale"
+            },
+            {
+                "plantes": "Artichaut + chardon marie",
+                "descript": "Drainage hépatique, protection du foie"
+            },
+            {
+                "plantes": "Fumeterre + chardon marie",
+                "descript": "Drainage hépatique, protection du foie"
+            },
+            {
+                "plantes": "Radis noir + chardon marie",
+                "descript": "Drainage hépatique, protection du foie"
+            }
+        ]
+    },
+    {
+        "object": "Personne qui fait des cystites chroniques (sur avis médical)",
+        "associated": [
+            {
+                "plantes": "Echinacée + Canneberge + bruyère",
+                "descript": "Renforcent la flore intestinale, lutent contre E. Coli, diurétique, antiseptique des voies urinaires"
+            },
+            {
+                "plantes": "Aloés vera gel (en plus de l’une ou l’autre des recettes précédentes)",
+                "descript": "Lutent contre le Candida albican"
+            },
+            {
+                "plantes": "Ail noir",
+                "descript": "Apport en souffre"
+            },
+            {
+                "plantes": "Argousier",
+                "descript": "Apport en vit C"
+            }
+        ]
+    },
+    {
+        "object": "Enfant stressé qui peine à dormir",
+        "associated": [
+            {
+                "plantes": "Eschscholtzia",
+                "descript": "Calme et apaise"
+            }
+        ]
+    },
+    {
+        "object": "Personne qui prépare des examens",
+        "associated": [
+            {
+                "plantes": "Gingko biloba",
+                "descript": "Aide mémoire"
+            },
+            {
+                "plantes": "Millepertuis, lotier, eschscholtzia",
+                "descript": "Stress"
+            },
+            {
+                "plantes": "Mélisse, valériane",
+                "descript": "Stress, sommeil"
+            },
+            {
+                "plantes": "Argousier",
+                "descript": "Contre l’asthénie"
+            }
+        ]
+    },
+    {
+        "object": "Personne souffrant d’une mauvaise circulation sanguine, protocole d’avant et de pendant l’été",
+        "associated": [
+            {
+                "plantes": "Cassis+ Vigne rouge",
+                "descript": "Diurétique, anti-inflammatoire, veinotonique"
+            },
+            {
+                "plantes": "En alternance avec",
+                "descript": ""
+            },
+            {
+                "plantes": "Sève de bouleau + Ortie",
+                "descript": "drainage et minéraux"
+            }
+        ]
+    }
+]

@@ -1,12 +1,77 @@
 {
   "expo": {
-    "sdkVersion": "27.0.0",
     "name": "Flora Natura",
-    "slug": "flora-natura"
-  },
-  "splash": {
-    "image": "./src/resources/images/logo.jpg",
-    "resizeMode": "contain",
-    "backgroundColor": "#4D4D4D"
+    "slug": "flora-natura",
+    "description": "Les compléments alimentaires Flora Natura sont les seuls labellisés Nature et Progrès.",
+    "privacy": "public",
+    "sdkVersion": "32.0.0",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "myapp",
+    "primaryColor": "#92C7A9",
+    "androidStatusBarColor": "#92C7A9",
+    "androidStatusBar": {
+      "barStyle": "light-content",
+      "backgroundColor": "#92C7A9"
+    },
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#fff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "buildNumber": "1.0.0",
+      "loadJSInBackgroundExperimental": true,
+      "bundleIdentifier": "com.laboratoiresscientianatura.floranatura",
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Flora Natura a besoin de l’accès à la caméra pour scanner les produits"
+      }
+    },
+    "android": {
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "CAMERA",
+        "MANAGE_DOCUMENTS",
+        "READ_CONTACTS",
+        "READ_CALENDAR",
+        "WRITE_CALENDAR",
+        "READ_EXTERNAL_STORAGE",
+        "READ_PHONE_STATE",
+        "RECORD_AUDIO",
+        "USE_FINGERPRINT",
+        "VIBRATE",
+        "WAKE_LOCK",
+        "WRITE_EXTERNAL_STORAGE",
+        "com.anddoes.launcher.permission.UPDATE_COUNT",
+        "com.android.launcher.permission.INSTALL_SHORTCUT",
+        "com.google.android.c2dm.permission.RECEIVE",
+        "com.google.android.gms.permission.ACTIVITY_RECOGNITION",
+        "com.google.android.providers.gsf.permission.READ_GSERVICES",
+        "com.htc.launcher.permission.READ_SETTINGS",
+        "com.htc.launcher.permission.UPDATE_SHORTCUT",
+        "com.majeur.launcher.permission.UPDATE_BADGE",
+        "com.sec.android.provider.badge.permission.READ",
+        "com.sec.android.provider.badge.permission.WRITE",
+        "com.sonyericsson.home.permission.BROADCAST_BADGE",
+        "android.permissions.CAMERA",
+        "android.permissions.READ_INTERNAL_STORAGE",
+        "android.permissions.READ_EXTERNAL_STORAGE"
+      ],
+      "versionCode": 1,
+      "package": "com.laboratoiresscientianatura.floranatura"
+    }
   }
 }

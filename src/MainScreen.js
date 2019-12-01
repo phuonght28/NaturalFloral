@@ -1,55 +1,76 @@
-import React from "react"
-import { Root } from "native-base"
-import { createStackNavigator, createDrawerNavigator } from "react-navigation"
-import Home from "./screens/home/"
-import SideBar from "./screens/sidebar"
-import PlantesList from "./screens/plantes/plantesList"
-import PlantesDetail from "./screens/plantes/plantesDetail"
-import ProductsList from "./screens/products/productsList"
-import Register from "./screens/register/register"
-import About from "./screens/about/about"
-import Progress from "./screens/progress/progress"
-import Scanner from "./screens/scanner/scanner"
+import React from 'react'
+import {
+  createStackNavigator,
+  createDrawerNavigator,
+  createAppContainer,
+} from "react-navigation"
+import SideBar from "./components/sideBar"
 
+/* Liste des plantes */
+import {
+  PlantesList,
+    PlantesDetail,
+    SymptomList,
+    SymptomResult,
+} from "./screens/plantes"
+/* Liste des produits */
+import ProductsList from "./screens/produitsList"
+import ProductsDetail from "./screens/produitsDetail"
+/* Scanner */
+import Scanner from "./screens/scanner"
+import {
+  Glossaire,
+  TypicalProfiles,
+  LegalNotice,
+  Progress,
+  About,
+  ContactUs
+} from "./screens/posts"
 
-const Drawer = createDrawerNavigator(
+const drawerRoutes = createDrawerNavigator(
   {
-    Home: { screen: Home },
-    PlantesList: { screen: PlantesList },
-    PlantesDetail: { screen: PlantesDetail },
-    ProductsList: { screen: ProductsList },
-    Register: { screen: Register },
-    About: { screen: About },
-    Progress: { screen: Progress },
-    SideBar: { screen: SideBar },
-    Scanner: { screen: Scanner }
+    PlantesList: {
+      screen: createStackNavigator(
+        {
+          PlantesList: { screen: (props) => <PlantesList {...props} title={"Liste des plantes"} /> },
+          PlantesDetail: { screen: (props) => <PlantesDetail {...props} /> },
+          SymptomList: { screen: (props) => <SymptomList {...props} titleHeader={"Liste des Symptômes"} /> },
+          SymptomResult: { screen: (props) => <SymptomResult {...props} titleHeader={"Liste des résultats"} /> },
+        },
+        {
+          headerMode: "none", initialRouteName: 'PlantesList'
+        })
+    },
+    ProductsList: {
+      screen: createStackNavigator(
+        {
+          ProductsList: { screen: (props) => <ProductsList {...props} titleHeader={"Liste des ProductsList"} /> },
+          ProductsDetail: { screen: (props) => <ProductsDetail {...props} title={"Détails du produit"} /> },
+
+        },
+        { headerMode: "none", initialRouteName: 'ProductsList' })
+    },
+    Glossaire: { screen: (props) => <Glossaire {...props} titleHeader={"Glossaire"} /> },
+    LegalNotice: { screen: (props) => <LegalNotice {...props} titleHeader={"Mentions Légales"} /> },
+    TypicalProfiles: { screen: (props) => <TypicalProfiles {...props} titleHeader={"Profils types et plantes associées"} /> },
+    Progress: { screen: (props) => <Progress {...props} titleHeader={"Nature et progrès"} /> },
+    About: { screen: (props) => <About {...props} titleHeader={"À Propos"} /> },
+    ContactUs: { screen: (props) => <ContactUs {...props} titleHeader={"Contactez‑nous"} /> },
+    Scanner: { screen: (props) => <Scanner {...props} titleHeader={"Scanner"} /> },
   },
   {
     initialRouteName: "PlantesList",
-    contentOptions: {
-      activeTintColor: "#e91e63"
-    },
+    headerMode: "none",
+    contentOptions: { activeTintColor: "#1FB5AD" },
     contentComponent: props => <SideBar {...props} />
   }
 )
 
-const AppNavigator = createStackNavigator(
-  {
-    Drawer: { screen: Drawer },
-    PlantesList: { screen: PlantesList },
-    PlantesDetail: { screen: PlantesDetail },
-    ProductsList: { screen: ProductsList },
-    Register: { screen: Register },
-    SideBar: { screen: SideBar },
-    Scanner: { screen: Scanner }
-  },
-  {
-    initialRouteName: "Drawer",
-    headerMode: "none"
-  }
+const MainScreen = createStackNavigator(
+  { Drawer: { screen: drawerRoutes } },
+  { headerMode: "none" }
 )
 
-export default () =>
-  <Root>
-    <AppNavigator />
-  </Root>
+const App = createAppContainer(MainScreen);
+
+export default App;

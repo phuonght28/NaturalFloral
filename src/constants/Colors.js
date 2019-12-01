@@ -1,0 +1,36 @@
+const tintColor = '#2f95dc';
+
+export default {
+  tintColor,
+  tabIconDefault: '#ccc',
+  tabIconSelected: tintColor,
+  tabBar: '#fefefe',
+  errorBackground: 'red',
+  errorText: '#fff',
+  warningBackground: '#EAEB5E',
+  warningText: '#666804',
+  noticeBackground: tintColor,
+  noticeText: '#fff',
+  brandInfo: "#456CAA",
+  border: '#9B9B9B',
+  info: "#456CAA",
+  //00955F
+  text: '#575757',
+  H1: '#7A7A7A',
+  H2: '#989898',
+  brandSuccess: "#7EBF00",
+  brandDanger: "#E94F3D",
+  brandWarning: "#F7B334",
+  brandDark: "#000",
+  brandLight: "#f4f4f4",
+  online: "#72B048",
+  offline: "gray",
+  bgWhite: 'rgba(255,255,255,0.7)',
+
+  prime: '#92C7A9',
+  shadow: '#575757',
+  facebook: '#4866B2',
+  youtube: '#FF0000',
+  linkedin: '#0075B6',
+  instagram: '#6697B6',
+};

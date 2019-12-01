@@ -1,0 +1,72 @@
+[
+    {
+        "title": "Liste des plantes",
+        "route": "PlantesList",
+        "status": "active",
+        "icon": "envira",
+        "iconType": "FontAwesome"
+    },
+    {
+        "title": "Liste des produits",
+        "route": "ProductsList",
+        "status": "active",
+        "icon": "ios-medical",
+        "iconType": "Ionicons"
+    },
+    {
+        "title": "Glossaire",
+        "route": "Glossaire",
+        "status": "active",
+        "icon": "assistant",
+        "iconType": "MaterialIcons"
+    },
+    {
+        "title": "Profils types et plantes associées",
+        "route": "TypicalProfiles",
+        "status": "active",
+        "icon": "assistant",
+        "iconType": "MaterialIcons"
+    },
+    {
+        "title": "Nature et progrès",
+        "route": "Progress",
+        "status": "active",
+        "icon": "ios-paper",
+        "iconType": "Ionicons"
+    },
+    {
+        "title": "Aide et Assistance",
+        "route": "Help",
+        "status": "off",
+        "icon": "assistant",
+        "iconType": "MaterialIcons"
+    },
+    {
+        "title": "À Propos des Laboratoires\nScientia Natura",
+        "route": "About",
+        "status": "active",
+        "icon": "info-outline",
+        "iconType": "MaterialIcons"
+    },
+    {
+        "title": "Mentions légales",
+        "route": "LegalNotice",
+        "status": "active",
+        "icon": "info-circle",
+        "iconType": "FontAwesome"
+    },
+    {
+        "title": "Contactez‑nous",
+        "route": "ContactUs",
+        "status": "active",
+        "icon": "contacts",
+        "iconType": "MaterialIcons"
+    },
+    {
+        "title": "Scanner",
+        "route": "Scanner",
+        "status": "active",
+        "icon": "md-barcode",
+        "iconType": "Ionicons"
+    }
+]
