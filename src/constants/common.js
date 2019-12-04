@@ -10,7 +10,7 @@ const STATUS_BAR_H = STATUS_BAR_Height()
 import { AlertModal, H1, H2 } from "./StyledText"
 import Colors from './Colors'
 
-import SPECIALTIES from '../services/parsers/specialties'
+import SPECIALTIES from ' ../parsers/specialties'
 
 export const NEWSPECIALTIES = SPECIALTIES
 export const LANGUAGE = LanguageFrench

@@ -4,7 +4,7 @@
     "slug": "flora-natura",
     "description": "Les compléments alimentaires Flora Natura sont les seuls labellisés Nature et Progrès.",
     "privacy": "public",
-    "sdkVersion": "32.0.0",
+    "sdkVersion": "33.0.0",
     "platforms": [
       "ios",
       "android"
@@ -31,7 +31,7 @@
       "**/*"
     ],
     "ios": {
-      "buildNumber": "1.0.1",
+      "buildNumber": "1",
       "loadJSInBackgroundExperimental": true,
       "bundleIdentifier": "com.laboratoires.scientianatura.floranatura",
       "supportsTablet": true,

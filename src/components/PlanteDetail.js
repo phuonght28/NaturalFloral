@@ -11,7 +11,6 @@ export default class PlantesDetail extends Component {
 	}
 	render() {
 		const { plante } = this.props
-		console.log(plante)
 		return (
 			<View style={{ padding: 20, paddingBottom: 50 }} >
 				{plante.favori == true && <Icon style={{ color: "#F78B32" }} name='star' type="FontAwesome" />}
