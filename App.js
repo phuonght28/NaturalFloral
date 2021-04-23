@@ -1,24 +1,18 @@
-import React from 'react';
-import _ from 'lodash';
-import { YellowBox, NetInfo, AppState, Platform, StyleSheet, Text, View, Image, Alert } from 'react-native';
-import { AppLoading, Updates, Asset, Font, Icon } from 'expo';
-import STORAGE from './src/services/Storage';
-import MainScreen from './src/MainScreen';
-import { Root } from "native-base";
+import React from 'react'
+import _ from 'lodash'
+import { Root } from "native-base"
+import { LogBox, Alert } from 'react-native'
+import { AppLoading } from 'expo'
+import * as Font from 'expo-font'
+import * as Updates from 'expo-updates'
+import STORAGE from './src/services/Storage'
+import MainScreen from './src/MainScreen'
 
 export default class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = { appIsReady: false }
-    console.disableYellowBox = true
-    console.ignoredYellowBox = ['Setting a timer']
-    YellowBox.ignoreWarnings(['Setting a timer'])
-    const _console = _.clone(console)
-    console.warn = message => {
-      if (message.indexOf('Setting a timer') <= -1) {
-        _console.warn(message);
-      }
-    }
+    LogBox.ignoreAllLogs(true)
   }
   componentDidMount() {
     this._fetchNewVersion()
@@ -32,9 +26,7 @@ export default class App extends React.Component {
         Alert.alert(
           'New update',
           'A new update has been downloaded. Please reload to get new version now.',
-          [
-            { text: 'OK', onPress: () => Updates.reloadFromCache() }
-          ],
+          [{ text: 'OK', onPress: () => Updates.reloadFromCache() }],
           { cancelable: false }
         )
       }
@@ -84,8 +76,8 @@ export const assetsFonts = {
   'Material Icons': require('./src/resources/fonts/vector-icons/MaterialIcons.ttf'),
 
 
-  'Roboto': require('./src/resources/fonts/Roboto.ttf'),
-  'Roboto_medium': require('./src/resources/fonts/Roboto_medium.ttf'),
+  // 'Roboto': require('./src/resources/fonts/Roboto.ttf'),
+  // 'Roboto_medium': require('./src/resources/fonts/Roboto_medium.ttf'),
   'HelveticaNeue-Light': require('./src/resources/fonts/HelveticaNeue/HelveticaNeue-Light.ttf'),
 
   'Montserrat-Regular': require('./src/resources/fonts/Montserrat/Montserrat-Regular.ttf'),

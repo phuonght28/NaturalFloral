@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { BarCodeScanner, Permissions } from 'expo'
+import { BarCodeScanner } from 'expo-barcode-scanner'
+import * as Permissions from 'expo-permissions'
 import { Container, Content, Button } from "native-base"
 import TITLE from '../components/titleHeader'
 import PRODUITS from '../parsers/produits'
@@ -14,7 +15,7 @@ export default class Scanner extends Component {
     hasCameraPermission: null,
   }
 
-  async componentWillMount() {
+  async componentDidMount() {
     const { status } = await Permissions.askAsync(Permissions.CAMERA)
     this.setState({ hasCameraPermission: status === 'granted' })
   }

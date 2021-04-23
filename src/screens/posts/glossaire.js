@@ -3,7 +3,7 @@ import { StyleSheet, View, ActivityIndicator, TouchableOpacity } from 'react-nat
 import { Container, Content, Item, Input, Icon, Text } from "native-base"
 
 import TITLE from "../../components/titleHeader"
-import GLOSSAIRE from '../../parsers/glossaire'
+import GLOSSAIRE from '../../services/parsers/glossaire'
 
 
 export default class Glossaire extends Component {

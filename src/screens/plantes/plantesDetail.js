@@ -25,7 +25,7 @@ export default class PlantesDetail extends Component {
 		this.propsPlanteID
 	}
 
-	async componentWillMount() {
+	async componentDidMount() {
 		this.propsPlanteID = this.props.navigation.state.params.id
 		await AsyncStorage.getItem('FAVORITE').then(async (FAVORITE) => {
 			FAVORITE = JSON.parse(FAVORITE)
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
 		borderBottomWidth: 4
 	},
 	label: {
-		fontFamily: 'Roboto_medium',
+		// fontFamily: 'Roboto_medium',
 		fontSize: 18,
 		width: 100,
 		textAlign: 'center',

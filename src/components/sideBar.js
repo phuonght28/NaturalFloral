@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { StyleSheet, ScrollView } from "react-native"
 import { View, Text, ListItem, Icon } from "native-base"
-import ROUTE from '../parsers/route'
+import ROUTE from '../services/parsers/route'
 const activeColor = "#1FB5AD"
 const offColor = "#AAB2BD"
 const SideBarBG = '#28282e'

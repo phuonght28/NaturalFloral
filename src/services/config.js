@@ -53,9 +53,9 @@ export const redirectToIndex = message => {
  * 
     const datetime = moment(new Date())
     const timestamp = returnToTimestamp(datetime)
-    console.log(datetime)
-    console.log(timestamp)
-    console.log(returnToDateTime(timestamp))
+    //console.log(datetime)
+    //console.log(timestamp)
+    //console.log(returnToDateTime(timestamp))
 
 */
 

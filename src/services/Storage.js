@@ -1,10 +1,9 @@
 import EventEmitter from './event-emitter'
-import { AsyncStorage, Platform, PermissionsAndroid, Alert } from 'react-native'
+import { AsyncStorage } from 'react-native'
 import PRODUITS from '../parsers/produits'
 import PLANTES from '../parsers/plantes'
 import IMAGES from './images'
 import moment from 'moment'
-import { Permissions, Notifications } from 'expo'
 
 class Storage extends EventEmitter {
   constructor() {
@@ -12,7 +11,7 @@ class Storage extends EventEmitter {
     this.newDate = moment(new Date()).format('h:mm:ss:SS')
   }
   async warmUp() {
-    await this._retrieveData('FAVORITE')
+    // await this._retrieveData('FAVORITE')
   }
 
 
@@ -49,16 +48,16 @@ class Storage extends EventEmitter {
       AsyncStorage.getItem(keyString, (err, result) => {
         if (result) {
           if (result == '') {
-            console.log(this.newDate, keyString, 'Storage result == "" !!!')
+            //console.log(this.newDate, keyString, 'Storage result == "" !!!')
           }
           else {
-            console.log(this.newDate, keyString, 'Storage result ', result)
+            //console.log(this.newDate, keyString, 'Storage result ', result)
           }
           return JSON.parse(result)
         }
         else {
           const value = []
-          console.log(this.newDate, keyString, ' error ')
+          //console.log(this.newDate, keyString, ' error ')
           this._storageUpdate(keyString, value)
         }
       })
@@ -82,7 +81,7 @@ class Storage extends EventEmitter {
     try {
       AsyncStorage.removeItem(keyString, (err) => {
         if (err) {
-          console.log('AsyncStorage.removeItem err:', err)
+          //console.log('AsyncStorage.removeItem err:', err)
         }
       })
     }

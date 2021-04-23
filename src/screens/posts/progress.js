@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { StyleSheet, View, Image } from 'react-native'
 import { Container, Content, Text, H1 } from "native-base"
 import TitleHeader from "../../components/titleHeader"
-import PROGRES from '../../parsers/progres'
+import PROGRES from '../../services/parsers/progres'
 
 export default class Progress extends Component {
   render() {

@@ -13,7 +13,7 @@ class CachedAPI {
       )
     }
     catch (err) {
-      console.log(err)
+      //console.log(err)
     }
   }
 
@@ -29,7 +29,7 @@ class CachedAPI {
       if (cachedData) {
         const time = cachedData.time
         if (moment().diff(time, 'minutes') <= cache) {
-          console.log(`Cached time: ${new Date() - startTime}`)
+          //console.log(`Cached time: ${new Date() - startTime}`)
           return cachedData.data
         }
       }
@@ -43,7 +43,7 @@ class CachedAPI {
     }
 
     await this.syncData()
-    console.log(`API Fetch time: ${new Date() - startTime}`)
+    //console.log(`API Fetch time: ${new Date() - startTime}`)
     return data
   }
 

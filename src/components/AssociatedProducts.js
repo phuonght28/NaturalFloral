@@ -29,7 +29,7 @@ export default class AssociatedProducts extends Component {
 					{listProduitAssocies.map((produit, index) => {
 						produit.img = IMAGES.getProduitsImages(produit.id)
 						const { nom, describe, img } = produit
-						console.log(produit)
+						//console.log(produit)
 						return (
 							<TouchableOpacity key={index} activeOpacity={0.7} onPress={() => { this._viewDetail(produit) }}>
 								<View style={{ flexDirection: 'row', marginBottom: 8, justifyContent: 'space-between', alignContent: 'center', alignItems: 'center' }}>

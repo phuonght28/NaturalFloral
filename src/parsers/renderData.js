@@ -19,7 +19,7 @@ const result = excelToJson({
 });
 jsonfile.writeFile(FILE_OUTPUT, result, 'utf8', function (err) {
     if (err) throw err;
-    console.log('----------------------------------------- convert-excel-to-json COMPLETE', FILE_OUTPUT);
+    //console.log('----------------------------------------- convert-excel-to-json COMPLETE', FILE_OUTPUT);
 });
 
 function renderKeyword(listData) {
@@ -41,7 +41,7 @@ renderData(DATABASE)
 //node renderData
 function renderData(listData) {
     fs.readFile(listData, 'utf8', function readFileCallback(err, data) {
-        if (err) { console.log(err); }
+        if (err) { //console.log(err); }
         else {
             data = JSON.parse(data)
 
@@ -105,7 +105,7 @@ function writeData(fileNAME, dataObject) {
     dataObject = JSON.stringify(dataObject)//convert it back to json
     fs.writeFile(fileNAME, dataObject, 'utf8', function (err) {
         if (err) throw err;
-        console.log('----------------------------------------- Write COMPLETE', fileNAME);
+        //console.log('----------------------------------------- Write COMPLETE', fileNAME);
     });
 }
 

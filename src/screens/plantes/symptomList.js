@@ -1,8 +1,7 @@
 import React, { Component } from "react"
 import { Platform, NativeModules, StyleSheet, View, Text, ActivityIndicator, TouchableOpacity } from 'react-native'
 import { Container, Content, Item, Input, Icon } from "native-base"
-import SYMPTOM from '../../parsers/symptom'
-
+import SYMPTOM from '../../services/parsers/symptom'
 
 const { StatusBarManager } = NativeModules
 let STATUS_BAR_H = 44

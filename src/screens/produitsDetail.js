@@ -1,9 +1,8 @@
 import React, { Component } from "react"
 import PropTypes from 'prop-types'
-import { StyleSheet, Image, ActivityIndicator, Linking, Share, TouchableOpacity } from "react-native"
-import { Container, Content, View, Text, Button, Icon } from "native-base"
+import { StyleSheet, Image, ActivityIndicator, Linking, Share } from "react-native"
+import { Container, Content, View, Text, Button } from "native-base"
 import TITLE from '../components/titleHeader'
-import Colors from '../constants/Colors'
 
 export default class ProductsList extends Component {
 	static propTypes = {
@@ -11,24 +10,24 @@ export default class ProductsList extends Component {
 	}
 	onShare = async (link, nom) => {
 		try {
-			const result = await Share.share({
-				url: link,
-				message: nom,
-			});
-
-			if (result.action === Share.sharedAction) {
-				if (result.activityType) {
-					// shared with activity type of result.activityType
-				} else {
-					// shared
-				}
-			} else if (result.action === Share.dismissedAction) {
-				// dismissed
+		  const result = await Share.share({
+			url: link,
+			message: nom,
+		  });
+	
+		  if (result.action === Share.sharedAction) {
+			if (result.activityType) {
+			  // shared with activity type of result.activityType
+			} else {
+			  // shared
 			}
+		  } else if (result.action === Share.dismissedAction) {
+			// dismissed
+		  }
 		} catch (error) {
-			alert(error.message);
+		  alert(error.message);
 		}
-	};
+	  };
 	render() {
 		const produit = this.props.navigation.state.params
 		const { id, nom, plante, extrait, composition, describe, attention, img, link } = produit
@@ -51,11 +50,6 @@ export default class ProductsList extends Component {
 					<View style={TextStyle.paragraph}>
 						<Text style={[TextStyle.line, TextStyle.headLine]}>{nom}</Text>
 						<Text style={[TextStyle.line, { textAlign: 'center' }]}>{plante}</Text>
-					</View>
-					<View style={TextStyle.paragraph}>
-						<TouchableOpacity activeOpacity={1} onPress={() => Linking.openURL(link)}>
-							<Icon style={{ fontSize: 32, color: Colors.prime }} name={'md-cart'} />
-						</TouchableOpacity>
 					</View>
 					{extrait &&
 						<View style={TextStyle.paragraph}>

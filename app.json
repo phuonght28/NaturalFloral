@@ -1,15 +1,14 @@
 {
   "expo": {
-    "name": "Flora Natura",
-    "slug": "flora-natura",
+    "name": "Natway",
+    "slug": "Natway",
     "description": "Les compléments alimentaires Flora Natura sont les seuls labellisés Nature et Progrès.",
     "privacy": "public",
-    "sdkVersion": "33.0.0",
     "platforms": [
       "ios",
       "android"
     ],
-    "version": "1.0.1",
+    "version": "1.0.5",
     "orientation": "portrait",
     "scheme": "myapp",
     "primaryColor": "#92C7A9",
@@ -31,9 +30,9 @@
       "**/*"
     ],
     "ios": {
-      "buildNumber": "1",
+      "buildNumber": "2",
       "loadJSInBackgroundExperimental": true,
-      "bundleIdentifier": "com.laboratoires.scientianatura.floranatura",
+      "bundleIdentifier": "com.amagumolabs.floranatura",
       "supportsTablet": true,
       "infoPlist": {
         "NSCameraUsageDescription": "Flora Natura a besoin de l’accès à la caméra pour scanner les produits"
@@ -70,8 +69,8 @@
         "android.permissions.READ_INTERNAL_STORAGE",
         "android.permissions.READ_EXTERNAL_STORAGE"
       ],
-      "versionCode": 1,
-      "package": "com.laboratoires.scientianatura.floranatura"
+      "versionCode": 2,
+      "package": "com.amagumolabs.floranatura"
     }
   }
 }

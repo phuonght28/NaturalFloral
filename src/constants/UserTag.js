@@ -17,7 +17,7 @@ export default class UserTag extends Component {
       <View style={styles.tag} >
         <View style={[styles.item, { minHeight: 130 }]} onLayout={(event) => {
           var { x, y, width, height } = event.nativeEvent.layout;
-          console.log(user.displayName, height)
+          //console.log(user.displayName, height)
         }}
         >
           <View style={styles.itemRow}>
