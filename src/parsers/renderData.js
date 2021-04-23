@@ -41,7 +41,9 @@ renderData(DATABASE)
 //node renderData
 function renderData(listData) {
     fs.readFile(listData, 'utf8', function readFileCallback(err, data) {
-        if (err) { //console.log(err); }
+        if (err) {
+            //console.log(err); 
+        }
         else {
             data = JSON.parse(data)
 
