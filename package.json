@@ -22,7 +22,7 @@
     "expo-font": "~8.3.0",
     "expo-permissions": "~9.3.0",
     "expo-updates": "~0.3.3",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "moment": "^2.24.0",
     "native-base": "^2.12.1",
     "prop-types": "^15.7.2",
